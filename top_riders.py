@@ -56,4 +56,5 @@ READABLE_TIER_1 = {
     "Dries De Bondt",
     "Stefan Bissegger",
     "Connor Swift",
+    "Luca Mozzato",
 }
