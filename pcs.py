@@ -355,13 +355,13 @@ two_col_html = make_two_column_html(df)
 race_radio_html = make_race_radio_html(df)
 team_grouped_html = make_team_grouped_html(df)
 
-with open(f"{RACE_NAME}_two_column.html", "w", encoding="utf-8") as f:
+with open(f"pages/{RACE_NAME}_two_column.html", "w", encoding="utf-8") as f:
     f.write(two_col_html)
 
-with open(f"{RACE_NAME}_race_radio.html", "w", encoding="utf-8") as f:
+with open(f"pages/{RACE_NAME}_race_radio.html", "w", encoding="utf-8") as f:
     f.write(race_radio_html)
 
-with open(f"{RACE_NAME}_teams.html", "w", encoding="utf-8") as f:
+with open(f"pages/{RACE_NAME}_teams.html", "w", encoding="utf-8") as f:
     f.write(team_grouped_html)
 
 print("Generated:")
