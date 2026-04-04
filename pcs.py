@@ -5,6 +5,8 @@ from bs4 import BeautifulSoup
 import iso_emoji # ISO_TO_EMOJI mapping
 import top_riders # Arrays of readable names for manual star assignment
 
+import how_won #
+
 # ---------------------------------------------------------
 # CONFIG — your local files
 # ---------------------------------------------------------
@@ -308,14 +310,25 @@ def make_race_radio_html(df):
 
     rows = []
     for _, r in df.iterrows():
-        rows.append(f"""
-        <tr>
-            <td>{r['Number']}</td>
-            <td>{r['Rider']}</td>
-            <td>{r['Flag']}</td>
-            <td>{r['Stars']}</td>
-        </tr>
-        """)
+        stars = r['Stars']
+
+        # Default: one row, no scenario
+        scenario_list = [""]
+
+        if stars == "★★★★★★":      # 6-star
+            scenario_list = how_won.WIN_SCENARIOS_6
+        elif stars == "★★★★★":      # 5-star
+            scenario_list = how_won.WIN_SCENARIOS_5
+
+        for scenario in scenario_list:
+            rows.append(f"""
+            <tr>
+                <td>{r['Number']}</td>
+                <td>{r['Rider']}{' — ' + scenario if scenario else ''}</td>
+                <td>{r['Flag']}</td>
+                <td>{r['Stars']}</td>
+            </tr>
+            """)
 
     return f"""
     <html>
@@ -323,8 +336,8 @@ def make_race_radio_html(df):
         <meta charset="utf-8">
         <style>
             body {{ font-family: 'Courier New', monospace; margin: 15mm; }}
-            table {{ width: 100%; border-collapse: collapse; font-size: 13px; }}
-            th, td {{ padding: 4px 8px; border-bottom: 1px solid #ddd; }}
+            table {{ width: 800px; border-collapse: collapse; font-size: 16px; }}
+            th, td {{ padding: 10px 8px; border-bottom: 1px solid #ddd; }}
             th {{ text-align: left; font-size: 15px; }}
         </style>
     </head>
@@ -355,12 +368,12 @@ two_col_html = make_two_column_html(df)
 race_radio_html = make_race_radio_html(df)
 team_grouped_html = make_team_grouped_html(df)
 
-with open(f"pages/{RACE_NAME}_two_column.html", "w", encoding="utf-8") as f:
-    f.write(two_col_html)
-
+with open(f"pages/{RACE_NAME}_startlist.html", "w", encoding="utf-8") as f:
+    f.write(startlist_html)
+with open(f"index.html", "w", encoding="utf-8") as f:
+    f.write(race_radio_html)
 with open(f"pages/{RACE_NAME}_race_radio.html", "w", encoding="utf-8") as f:
     f.write(race_radio_html)
-
 with open(f"pages/{RACE_NAME}_teams.html", "w", encoding="utf-8") as f:
     f.write(team_grouped_html)
 
