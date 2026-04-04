@@ -325,6 +325,7 @@ def make_race_radio_html(df):
             <tr>
                 <td>{r['Number']}</td>
                 <td>{r['Rider']}{' — ' + scenario if scenario else ''}</td>
+                <td>{r['Team']}</td>
                 <td>{r['Flag']}</td>
                 <td>{r['Stars']}</td>
             </tr>
@@ -336,7 +337,7 @@ def make_race_radio_html(df):
         <meta charset="utf-8">
         <style>
             body {{ font-family: 'Courier New', monospace; margin: 15mm; }}
-            table {{ width: 800px; border-collapse: collapse; font-size: 16px; }}
+            table {{ width: 1240px; border-collapse: collapse; font-size: 16px; }}
             th, td {{ padding: 10px 8px; border-bottom: 1px solid #ddd; }}
             th {{ text-align: left; font-size: 15px; }}
         </style>
