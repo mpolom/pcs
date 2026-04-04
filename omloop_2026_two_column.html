@@ -1,0 +1,1437 @@
+
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            body {
+                font-family: 'Courier New', monospace;
+                margin: 15mm;
+            }
+            h2 {
+                text-align: center;
+                margin-bottom: 10mm;
+            }
+            .columns {
+                column-count: 2;
+                column-gap: 20mm;
+            }
+            .row {
+                break-inside: avoid;
+                padding: 3px 0;
+                display: block;
+                width: 100%;
+            }
+            .num { display: inline-block; width: 35px; }
+            .name { display: inline-block; width: 180px; }
+            .flag { display: inline-block; width: 30px; }
+            .team { display: inline-block; width: 180px; }
+            .fav { display: inline-block; width: 40px; text-align: right; }
+
+            @media print {
+                body { margin: 10mm; }
+                .columns { column-count: 2; column-gap: 15mm; }
+                .row { padding: 2px 0; font-size: 12px; }
+                h2 { margin-bottom: 5mm; }
+            }
+        </style>
+    </head>
+    <body>
+        <h2>fart — Startlist + PCS Favourites</h2>
+        <div class="columns">
+            
+        <div class="row">
+            <span class="num">161</span>
+            <span class="name">ABRAHAMSEN Jonas</span>
+            <span class="flag">🇳🇴</span>
+            <span class="team">Uno-X Mobility (WT)</span>
+            <span class="fav">59</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">82</span>
+            <span class="name">AERTS Toon</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Lotto Intermarché (WT)</span>
+            <span class="fav">483</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">152</span>
+            <span class="name">AFFINI Edoardo</span>
+            <span class="flag">🇮🇹</span>
+            <span class="team">Team Visma | Lease a Bike (WT)</span>
+            <span class="fav">383</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">182</span>
+            <span class="name">ALLEGAERT Piet</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Cofidis (PRT)</span>
+            <span class="fav">1578</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">211</span>
+            <span class="name">ALLENO Clément</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">Burgos Burpellet BH (PRT)</span>
+            <span class="fav">372</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">183</span>
+            <span class="name">ANIOŁKOWSKI Stanisław</span>
+            <span class="flag">🇵🇱</span>
+            <span class="team">Cofidis (PRT)</span>
+            <span class="fav">82</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">83</span>
+            <span class="name">ARTZ Huub</span>
+            <span class="flag">🇳🇱</span>
+            <span class="team">Lotto Intermarché (WT)</span>
+            <span class="fav">369</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">41</span>
+            <span class="name">ASGREEN Kasper</span>
+            <span class="flag">🇩🇰</span>
+            <span class="team">EF Education - EasyPost (WT)</span>
+            <span class="fav">323</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">102</span>
+            <span class="name">ASKEY Lewis</span>
+            <span class="flag">🇬🇧</span>
+            <span class="team">NSN Cycling Team (WT)</span>
+            <span class="fav">152</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">172</span>
+            <span class="name">BALLERINI Davide</span>
+            <span class="flag">🇮🇹</span>
+            <span class="team">XDS Astana Team (WT)</span>
+            <span class="fav">171</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">92</span>
+            <span class="name">BARRENETXEA Jon</span>
+            <span class="flag">🇪🇸</span>
+            <span class="team">Movistar Team (WT)</span>
+            <span class="fav">187</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">84</span>
+            <span class="name">BERCKMOES Jenno</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Lotto Intermarché (WT)</span>
+            <span class="fav">136</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">171</span>
+            <span class="name">BETTIOL Alberto</span>
+            <span class="flag">🇮🇹</span>
+            <span class="team">XDS Astana Team (WT)</span>
+            <span class="fav">145</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">85</span>
+            <span class="name">BEULLENS Cedric</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Lotto Intermarché (WT)</span>
+            <span class="fav">703</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">184</span>
+            <span class="name">BIERMANS Jenthe</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Cofidis (PRT)</span>
+            <span class="fav">227</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">31</span>
+            <span class="name">BISSEGGER Stefan</span>
+            <span class="flag">🇨🇭</span>
+            <span class="team">Decathlon CMA CGM Team (WT)</span>
+            <span class="fav">301</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">3</span>
+            <span class="name">BJERG Mikkel</span>
+            <span class="flag">🇩🇰</span>
+            <span class="team">UAE Team Emirates - XRG (WT)</span>
+            <span class="fav">493</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">242</span>
+            <span class="name">BLOEM Joren</span>
+            <span class="flag">🇳🇱</span>
+            <span class="team">Unibet Rose Rockets (PRT)</span>
+            <span class="fav">969</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">164</span>
+            <span class="name">BLUME LEVY William</span>
+            <span class="flag">🇩🇰</span>
+            <span class="team">Uno-X Mobility (WT)</span>
+            <span class="fav">779</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">103</span>
+            <span class="name">BOIVIN Guillaume</span>
+            <span class="flag">🇨🇦</span>
+            <span class="team">NSN Cycling Team (WT)</span>
+            <span class="fav">571</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">32</span>
+            <span class="name">BOL Cees</span>
+            <span class="flag">🇳🇱</span>
+            <span class="team">Decathlon CMA CGM Team (WT)</span>
+            <span class="fav">190</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">232</span>
+            <span class="name">BONNET Thomas</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">TotalEnergies (PRT)</span>
+            <span class="fav">610</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">23</span>
+            <span class="name">BORGO Alessandro</span>
+            <span class="flag">🇮🇹</span>
+            <span class="team">Bahrain - Victorious (WT)</span>
+            <span class="fav">1068</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">86</span>
+            <span class="name">BRAET Vito</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Lotto Intermarché (WT)</span>
+            <span class="fav">553</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">153</span>
+            <span class="name">BRENNAN Matthew</span>
+            <span class="flag">🇬🇧</span>
+            <span class="team">Team Visma | Lease a Bike (WT)</span>
+            <span class="fav">26</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">233</span>
+            <span class="name">BRUNEL Alexys</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">TotalEnergies (PRT)</span>
+            <span class="fav">1188</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">162</span>
+            <span class="name">BYSTRØM Sven Erik</span>
+            <span class="flag">🇳🇴</span>
+            <span class="team">Uno-X Mobility (WT)</span>
+            <span class="fav">549</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">93</span>
+            <span class="name">CANAL Carlos</span>
+            <span class="flag">🇪🇸</span>
+            <span class="team">Movistar Team (WT)</span>
+            <span class="fav">158</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">212</span>
+            <span class="name">CAVIA Daniel</span>
+            <span class="flag">🇪🇸</span>
+            <span class="team">Burgos Burpellet BH (PRT)</span>
+            <span class="fav">357</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">33</span>
+            <span class="name">CHAMBERLAIN Oscar</span>
+            <span class="flag">🇦🇺</span>
+            <span class="team">Decathlon CMA CGM Team (WT)</span>
+            <span class="fav">725</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">141</span>
+            <span class="name">CORKERY Dillon</span>
+            <span class="flag">🇮🇪</span>
+            <span class="team">Team Picnic PostNL (WT)</span>
+            <span class="fav">1242</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">234</span>
+            <span class="name">DAUPHIN Florian</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">TotalEnergies (PRT)</span>
+            <span class="fav">464</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">132</span>
+            <span class="name">DE BONDT Dries</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Team Jayco AlUla (WT)</span>
+            <span class="fav">243</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">191</span>
+            <span class="name">DE GENDT Aimé</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Pinarello Q36.5 Pro Cycling Team (PRT)</span>
+            <span class="fav">341</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">213</span>
+            <span class="name">DE LA CALLE Hugo</span>
+            <span class="flag">🇪🇸</span>
+            <span class="team">Burgos Burpellet BH (PRT)</span>
+            <span class="fav">434</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">81</span>
+            <span class="name">DE LIE Arnaud</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Lotto Intermarché (WT)</span>
+            <span class="fav">8</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">34</span>
+            <span class="name">DE PESTEL Sander</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Decathlon CMA CGM Team (WT)</span>
+            <span class="fav">647</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">133</span>
+            <span class="name">DE POOTER Dries</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Team Jayco AlUla (WT)</span>
+            <span class="fav">519</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">243</span>
+            <span class="name">DE VRIES Hartthijs</span>
+            <span class="flag">🇳🇱</span>
+            <span class="team">Unibet Rose Rockets (PRT)</span>
+            <span class="fav">607</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">221</span>
+            <span class="name">DEMAN Brem</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Team Flanders - Baloise (PRT)</span>
+            <span class="fav">1247</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">35</span>
+            <span class="name">DEWULF Stan</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Decathlon CMA CGM Team (WT)</span>
+            <span class="fav">377</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">12</span>
+            <span class="name">DILLIER Silvan</span>
+            <span class="flag">🇨🇭</span>
+            <span class="team">Alpecin-Premier Tech (WT)</span>
+            <span class="fav">708</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">134</span>
+            <span class="name">DONALDSON Robert</span>
+            <span class="flag">🇬🇧</span>
+            <span class="team">Team Jayco AlUla (WT)</span>
+            <span class="fav">296</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">113</span>
+            <span class="name">DRIZNERS Jarrad</span>
+            <span class="flag">🇦🇺</span>
+            <span class="team">Red Bull - BORA - hansgrohe (WT)</span>
+            <span class="fav">657</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">235</span>
+            <span class="name">DUJARDIN Sandy</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">TotalEnergies (PRT)</span>
+            <span class="fav">129</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">135</span>
+            <span class="name">DURBRIDGE Luke</span>
+            <span class="flag">🇦🇺</span>
+            <span class="team">Team Jayco AlUla (WT)</span>
+            <span class="fav">861</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">214</span>
+            <span class="name">FAGÚNDEZ Eric Antonio</span>
+            <span class="flag">🇺🇾</span>
+            <span class="team">Burgos Burpellet BH (PRT)</span>
+            <span class="fav">294</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">173</span>
+            <span class="name">FEDOROV Yevgeniy</span>
+            <span class="flag">🇰🇿</span>
+            <span class="team">XDS Astana Team (WT)</span>
+            <span class="fav">138</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">143</span>
+            <span class="name">FLYNN Sean</span>
+            <span class="flag">🇬🇧</span>
+            <span class="team">Team Picnic PostNL (WT)</span>
+            <span class="fav">674</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">192</span>
+            <span class="name">FRISON Frederik</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Pinarello Q36.5 Pro Cycling Team (PRT)</span>
+            <span class="fav">986</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">236</span>
+            <span class="name">GACHIGNARD Thomas</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">TotalEnergies (PRT)</span>
+            <span class="fav">565</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">91</span>
+            <span class="name">GARCÍA CORTINA Iván</span>
+            <span class="flag">🇪🇸</span>
+            <span class="team">Movistar Team (WT)</span>
+            <span class="fav">226</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">174</span>
+            <span class="name">GATE Aaron</span>
+            <span class="flag">🇳🇿</span>
+            <span class="team">XDS Astana Team (WT)</span>
+            <span class="fav">110</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">101</span>
+            <span class="name">GIRMAY Biniam</span>
+            <span class="flag">🇪🇷</span>
+            <span class="team">NSN Cycling Team (WT)</span>
+            <span class="fav">40</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">24</span>
+            <span class="name">GOVEKAR Matevž</span>
+            <span class="flag">🇸🇮</span>
+            <span class="team">Bahrain - Victorious (WT)</span>
+            <span class="fav">424</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">25</span>
+            <span class="name">GRADEK Kamil</span>
+            <span class="flag">🇵🇱</span>
+            <span class="team">Bahrain - Victorious (WT)</span>
+            <span class="fav">774</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">13</span>
+            <span class="name">GROVES Kaden</span>
+            <span class="flag">🇦🇺</span>
+            <span class="team">Alpecin-Premier Tech (WT)</span>
+            <span class="fav">123</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">52</span>
+            <span class="name">GRUEL Thibaud</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">Groupama - FDJ United (WT)</span>
+            <span class="fav">120</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">51</span>
+            <span class="name">GRÉGOIRE Romain</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">Groupama - FDJ United (WT)</span>
+            <span class="fav">23</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">154</span>
+            <span class="name">HAGENES Per Strand</span>
+            <span class="flag">🇳🇴</span>
+            <span class="team">Team Visma | Lease a Bike (WT)</span>
+            <span class="fav">245</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">202</span>
+            <span class="name">HALLER Marco</span>
+            <span class="flag">🇦🇹</span>
+            <span class="team">Tudor Pro Cycling Team (PRT)</span>
+            <span class="fav">283</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">62</span>
+            <span class="name">HEIDUK Kim</span>
+            <span class="flag">🇩🇪</span>
+            <span class="team">INEOS Grenadiers (WT)</span>
+            <span class="fav">470</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">4</span>
+            <span class="name">HERREGODTS Rune</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">UAE Team Emirates - XRG (WT)</span>
+            <span class="fav">801</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">163</span>
+            <span class="name">HOELGAARD Markus</span>
+            <span class="flag">🇳🇴</span>
+            <span class="team">Uno-X Mobility (WT)</span>
+            <span class="fav">198</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">-</span>
+            <span class="name">HOFSTETTER Hugo</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">NSN Cycling Team (WT)</span>
+            <span class="fav">278</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">43</span>
+            <span class="name">HONORÉ Mikkel Frølich</span>
+            <span class="flag">🇩🇰</span>
+            <span class="team">EF Education - EasyPost (WT)</span>
+            <span class="fav">195</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">36</span>
+            <span class="name">HOOLE Daan</span>
+            <span class="flag">🇳🇱</span>
+            <span class="team">Decathlon CMA CGM Team (WT)</span>
+            <span class="fav">209</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">53</span>
+            <span class="name">HUENS Axel</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">Groupama - FDJ United (WT)</span>
+            <span class="fav">267</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">54</span>
+            <span class="name">JACOBS Johan</span>
+            <span class="flag">🇨🇭</span>
+            <span class="team">Groupama - FDJ United (WT)</span>
+            <span class="fav">522</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">-</span>
+            <span class="name">JOHANSEN Julius</span>
+            <span class="flag">🇩🇰</span>
+            <span class="team">UAE Team Emirates - XRG (WT)</span>
+            <span class="fav">628</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">203</span>
+            <span class="name">KLUCKERS Arthur</span>
+            <span class="flag">🇱🇺</span>
+            <span class="team">Tudor Pro Cycling Team (PRT)</span>
+            <span class="fav">608</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">215</span>
+            <span class="name">KMÍNEK Vojtěch</span>
+            <span class="flag">🇨🇿</span>
+            <span class="team">Burgos Burpellet BH (PRT)</span>
+            <span class="fav">1602</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">244</span>
+            <span class="name">KOPECKÝ Matyáš</span>
+            <span class="flag">🇨🇿</span>
+            <span class="team">Unibet Rose Rockets (PRT)</span>
+            <span class="fav">179</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">245</span>
+            <span class="name">KOPECKÝ Tomáš</span>
+            <span class="flag">🇨🇿</span>
+            <span class="team">Unibet Rose Rockets (PRT)</span>
+            <span class="fav">845</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">72</span>
+            <span class="name">KRAGH ANDERSEN Søren</span>
+            <span class="flag">🇩🇰</span>
+            <span class="team">Lidl - Trek (WT)</span>
+            <span class="fav">325</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">241</span>
+            <span class="name">KUBIŠ Lukáš</span>
+            <span class="flag">🇸🇰</span>
+            <span class="team">Unibet Rose Rockets (PRT)</span>
+            <span class="fav">47</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">122</span>
+            <span class="name">LAMPAERT Yves</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Soudal Quick-Step (WT)</span>
+            <span class="fav">459</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">44</span>
+            <span class="name">LAMPERTI Luke</span>
+            <span class="flag">🇺🇸</span>
+            <span class="team">EF Education - EasyPost (WT)</span>
+            <span class="fav">202</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">222</span>
+            <span class="name">LANHOVE Milan</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Team Flanders - Baloise (PRT)</span>
+            <span class="fav">539</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">156</span>
+            <span class="name">LAPORTE Christophe</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">Team Visma | Lease a Bike (WT)</span>
+            <span class="fav">78</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">237</span>
+            <span class="name">LEROUX Samuel</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">TotalEnergies (PRT)</span>
+            <span class="fav">429</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">193</span>
+            <span class="name">LIEPIŅŠ Emīls</span>
+            <span class="flag">🇱🇻</span>
+            <span class="team">Pinarello Q36.5 Pro Cycling Team (PRT)</span>
+            <span class="fav">727</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">175</span>
+            <span class="name">LIVYNS Arjen</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">XDS Astana Team (WT)</span>
+            <span class="fav">446</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">104</span>
+            <span class="name">LOUVEL Matis</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">NSN Cycling Team (WT)</span>
+            <span class="fav">485</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">216</span>
+            <span class="name">MACÍAS César</span>
+            <span class="flag">🇲🇽</span>
+            <span class="team">Burgos Burpellet BH (PRT)</span>
+            <span class="fav">425</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">55</span>
+            <span class="name">MADOUAS Valentin</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">Groupama - FDJ United (WT)</span>
+            <span class="fav">163</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">-</span>
+            <span class="name">MAGNIER Paul</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">Soudal Quick-Step (WT)</span>
+            <span class="fav">14</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">205</span>
+            <span class="name">MAYRHOFER Marius</span>
+            <span class="flag">🇩🇪</span>
+            <span class="team">Tudor Pro Cycling Team (PRT)</span>
+            <span class="fav">237</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">194</span>
+            <span class="name">MAŁECKI Kamil</span>
+            <span class="flag">🇵🇱</span>
+            <span class="team">Pinarello Q36.5 Pro Cycling Team (PRT)</span>
+            <span class="fav">760</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">136</span>
+            <span class="name">MEZGEC Luka</span>
+            <span class="flag">🇸🇮</span>
+            <span class="team">Team Jayco AlUla (WT)</span>
+            <span class="fav">702</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">94</span>
+            <span class="name">MILESI Lorenzo</span>
+            <span class="flag">🇮🇹</span>
+            <span class="team">Movistar Team (WT)</span>
+            <span class="fav">259</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">26</span>
+            <span class="name">MIQUEL Pau</span>
+            <span class="flag">🇪🇸</span>
+            <span class="team">Bahrain - Victorious (WT)</span>
+            <span class="fav">182</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">21</span>
+            <span class="name">MOHORIČ Matej</span>
+            <span class="flag">🇸🇮</span>
+            <span class="team">Bahrain - Victorious (WT)</span>
+            <span class="fav">238</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">6</span>
+            <span class="name">MORGADO António</span>
+            <span class="flag">🇵🇹</span>
+            <span class="team">UAE Team Emirates - XRG (WT)</span>
+            <span class="fav">65</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">95</span>
+            <span class="name">MORO Manlio</span>
+            <span class="flag">🇮🇹</span>
+            <span class="team">Movistar Team (WT)</span>
+            <span class="fav">865</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">206</span>
+            <span class="name">MOZZATO Luca</span>
+            <span class="flag">🇮🇹</span>
+            <span class="team">Tudor Pro Cycling Team (PRT)</span>
+            <span class="fav">121</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">105</span>
+            <span class="name">MULLEN Ryan</span>
+            <span class="flag">🇮🇪</span>
+            <span class="team">NSN Cycling Team (WT)</span>
+            <span class="fav">814</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">37</span>
+            <span class="name">NAESEN Oliver</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Decathlon CMA CGM Team (WT)</span>
+            <span class="fav">482</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">2</span>
+            <span class="name">OLIVEIRA Rui</span>
+            <span class="flag">🇵🇹</span>
+            <span class="team">UAE Team Emirates - XRG (WT)</span>
+            <span class="fav">448</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">185</span>
+            <span class="name">PAGE Hugo</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">Cofidis (PRT)</span>
+            <span class="fav">353</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">123</span>
+            <span class="name">PEDERSEN Casper</span>
+            <span class="flag">🇩🇰</span>
+            <span class="team">Soudal Quick-Step (WT)</span>
+            <span class="fav">729</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">71</span>
+            <span class="name">PEDERSEN Mads</span>
+            <span class="flag">🇩🇰</span>
+            <span class="team">Lidl - Trek (WT)</span>
+            <span class="fav">7</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">112</span>
+            <span class="name">PITHIE Laurence</span>
+            <span class="flag">🇳🇿</span>
+            <span class="team">Red Bull - BORA - hansgrohe (WT)</span>
+            <span class="fav">192</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">14</span>
+            <span class="name">PLANCKAERT Edward</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Alpecin-Premier Tech (WT)</span>
+            <span class="fav">354</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">207</span>
+            <span class="name">PLUIMERS Rick</span>
+            <span class="flag">🇳🇱</span>
+            <span class="team">Tudor Pro Cycling Team (PRT)</span>
+            <span class="fav">280</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">1</span>
+            <span class="name">POGAČAR Tadej</span>
+            <span class="flag">🇸🇮</span>
+            <span class="team">UAE Team Emirates - XRG (WT)</span>
+            <span class="fav">1</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">5</span>
+            <span class="name">POLITT Nils</span>
+            <span class="flag">🇩🇪</span>
+            <span class="team">UAE Team Emirates - XRG (WT)</span>
+            <span class="fav">342</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">246</span>
+            <span class="name">RASENBERG Martijn</span>
+            <span class="flag">🇳🇱</span>
+            <span class="team">Unibet Rose Rockets (PRT)</span>
+            <span class="fav">1003</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">124</span>
+            <span class="name">REINDERINK Pepijn</span>
+            <span class="flag">🇳🇱</span>
+            <span class="team">Soudal Quick-Step (WT)</span>
+            <span class="fav">603</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">186</span>
+            <span class="name">RENARD Alexis</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">Cofidis (PRT)</span>
+            <span class="fav">159</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">144</span>
+            <span class="name">RENARD-HAQUIN Henri-François</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">Team Picnic PostNL (WT)</span>
+            <span class="fav">1098</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">165</span>
+            <span class="name">RESELL Erik Nordsæter</span>
+            <span class="flag">🇳🇴</span>
+            <span class="team">Uno-X Mobility (WT)</span>
+            <span class="fav">762</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">125</span>
+            <span class="name">REX Laurenz</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Soudal Quick-Step (WT)</span>
+            <span class="fav">175</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">15</span>
+            <span class="name">RICKAERT Jonas</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Alpecin-Premier Tech (WT)</span>
+            <span class="fav">728</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">16</span>
+            <span class="name">RIESEBEEK Oscar</span>
+            <span class="flag">🇳🇱</span>
+            <span class="team">Alpecin-Premier Tech (WT)</span>
+            <span class="fav">1231</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">176</span>
+            <span class="name">ROMELE Alessandro</span>
+            <span class="flag">🇮🇹</span>
+            <span class="team">XDS Astana Team (WT)</span>
+            <span class="fav">824</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">56</span>
+            <span class="name">RUSSO Clément</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">Groupama - FDJ United (WT)</span>
+            <span class="fav">461</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">87</span>
+            <span class="name">RUTSCH Jonas</span>
+            <span class="flag">🇩🇪</span>
+            <span class="team">Lotto Intermarché (WT)</span>
+            <span class="fav">371</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">217</span>
+            <span class="name">SAINBAYAR Jambaljamts</span>
+            <span class="flag">🇲🇳</span>
+            <span class="team">Burgos Burpellet BH (PRT)</span>
+            <span class="fav">586</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">-</span>
+            <span class="name">SCHMID Mauro</span>
+            <span class="flag">🇨🇭</span>
+            <span class="team">Team Jayco AlUla (WT)</span>
+            <span class="fav">27</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">45</span>
+            <span class="name">SCHWARZBACHER Matthias</span>
+            <span class="flag">🇸🇰</span>
+            <span class="team">EF Education - EasyPost (WT)</span>
+            <span class="fav">811</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">22</span>
+            <span class="name">SEGAERT Alec</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Bahrain - Victorious (WT)</span>
+            <span class="fav">151</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">96</span>
+            <span class="name">SERRANO Gonzalo</span>
+            <span class="flag">🇪🇸</span>
+            <span class="team">Movistar Team (WT)</span>
+            <span class="fav">748</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">106</span>
+            <span class="name">SHEEHAN Riley</span>
+            <span class="flag">🇺🇸</span>
+            <span class="team">NSN Cycling Team (WT)</span>
+            <span class="fav">150</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">63</span>
+            <span class="name">SHEFFIELD Magnus</span>
+            <span class="flag">🇺🇸</span>
+            <span class="team">INEOS Grenadiers (WT)</span>
+            <span class="fav">193</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">46</span>
+            <span class="name">SIMMONS Colby</span>
+            <span class="flag">🇺🇸</span>
+            <span class="team">EF Education - EasyPost (WT)</span>
+            <span class="fav">771</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">247</span>
+            <span class="name">STOCKMAN Abram</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Unibet Rose Rockets (PRT)</span>
+            <span class="fav">1582</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">126</span>
+            <span class="name">STUYVEN Jasper</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Soudal Quick-Step (WT)</span>
+            <span class="fav">124</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">73</span>
+            <span class="name">SUNEKÆR NORSGAARD Mathias</span>
+            <span class="flag">🇩🇰</span>
+            <span class="team">Lidl - Trek (WT)</span>
+            <span class="fav">863</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">64</span>
+            <span class="name">SWIFT Connor</span>
+            <span class="flag">🇬🇧</span>
+            <span class="team">INEOS Grenadiers (WT)</span>
+            <span class="fav">687</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">17</span>
+            <span class="name">SÉNÉCHAL Florian</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">Alpecin-Premier Tech (WT)</span>
+            <span class="fav">709</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">75</span>
+            <span class="name">SÖDERQVIST Jakob</span>
+            <span class="flag">🇸🇪</span>
+            <span class="team">Lidl - Trek (WT)</span>
+            <span class="fav">206</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">137</span>
+            <span class="name">SÜTTERLIN Jasha</span>
+            <span class="flag">🇩🇪</span>
+            <span class="team">Team Jayco AlUla (WT)</span>
+            <span class="fav">671</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">61</span>
+            <span class="name">TARLING Joshua</span>
+            <span class="flag">🇬🇧</span>
+            <span class="team">INEOS Grenadiers (WT)</span>
+            <span class="fav">208</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">177</span>
+            <span class="name">TEUNISSEN Mike</span>
+            <span class="flag">🇳🇱</span>
+            <span class="team">XDS Astana Team (WT)</span>
+            <span class="fav">112</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">181</span>
+            <span class="name">TEUNS Dylan</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Cofidis (PRT)</span>
+            <span class="fav">360</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">76</span>
+            <span class="name">TEUTENBERG Tim Torn</span>
+            <span class="flag">🇩🇪</span>
+            <span class="team">Lidl - Trek (WT)</span>
+            <span class="fav">241</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">77</span>
+            <span class="name">THEUNS Edward</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Lidl - Trek (WT)</span>
+            <span class="fav">599</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">114</span>
+            <span class="name">THORNLEY Callum</span>
+            <span class="flag">🇬🇧</span>
+            <span class="team">Red Bull - BORA - hansgrohe (WT)</span>
+            <span class="fav">631</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">166</span>
+            <span class="name">TILLER Rasmus</span>
+            <span class="flag">🇳🇴</span>
+            <span class="team">Uno-X Mobility (WT)</span>
+            <span class="fav">178</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">97</span>
+            <span class="name">TORRES Albert</span>
+            <span class="flag">🇪🇸</span>
+            <span class="team">Movistar Team (WT)</span>
+            <span class="fav">1124</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">115</span>
+            <span class="name">TRATNIK Jan</span>
+            <span class="flag">🇸🇮</span>
+            <span class="team">Red Bull - BORA - hansgrohe (WT)</span>
+            <span class="fav">739</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">201</span>
+            <span class="name">TRENTIN Matteo</span>
+            <span class="flag">🇮🇹</span>
+            <span class="team">Tudor Pro Cycling Team (PRT)</span>
+            <span class="fav">70</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">57</span>
+            <span class="name">TRONCHON Bastien</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">Groupama - FDJ United (WT)</span>
+            <span class="fav">167</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">231</span>
+            <span class="name">TURGIS Anthony</span>
+            <span class="flag">🇫🇷</span>
+            <span class="team">TotalEnergies (PRT)</span>
+            <span class="fav">154</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">65</span>
+            <span class="name">TURNER Ben</span>
+            <span class="flag">🇬🇧</span>
+            <span class="team">INEOS Grenadiers (WT)</span>
+            <span class="fav">118</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">-</span>
+            <span class="name">VACEK Mathias</span>
+            <span class="flag">🇨🇿</span>
+            <span class="team">Lidl - Trek (WT)</span>
+            <span class="fav">162</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">42</span>
+            <span class="name">VALGREN Michael</span>
+            <span class="flag">🇩🇰</span>
+            <span class="team">EF Education - EasyPost (WT)</span>
+            <span class="fav">321</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">151</span>
+            <span class="name">VAN AERT Wout</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Team Visma | Lease a Bike (WT)</span>
+            <span class="fav">13</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">107</span>
+            <span class="name">VAN ASBROECK Tom</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">NSN Cycling Team (WT)</span>
+            <span class="fav">497</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">121</span>
+            <span class="name">VAN BAARLE Dylan</span>
+            <span class="flag">🇳🇱</span>
+            <span class="team">Soudal Quick-Step (WT)</span>
+            <span class="fav">400</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">146</span>
+            <span class="name">VAN DEN BERG Julius</span>
+            <span class="flag">🇳🇱</span>
+            <span class="team">Team Picnic PostNL (WT)</span>
+            <span class="fav">920</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">-</span>
+            <span class="name">VAN DEN BERG Marijn</span>
+            <span class="flag">🇳🇱</span>
+            <span class="team">EF Education - EasyPost (WT)</span>
+            <span class="fav">306</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">147</span>
+            <span class="name">VAN DEN BROEK Frank</span>
+            <span class="flag">🇳🇱</span>
+            <span class="team">Team Picnic PostNL (WT)</span>
+            <span class="fav">204</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">11</span>
+            <span class="name">VAN DER POEL Mathieu</span>
+            <span class="flag">🇳🇱</span>
+            <span class="team">Alpecin-Premier Tech (WT)</span>
+            <span class="fav">9</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">116</span>
+            <span class="name">VAN DIJKE Mick</span>
+            <span class="flag">🇳🇱</span>
+            <span class="team">Red Bull - BORA - hansgrohe (WT)</span>
+            <span class="fav">393</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">117</span>
+            <span class="name">VAN DIJKE Tim</span>
+            <span class="flag">🇳🇱</span>
+            <span class="team">Red Bull - BORA - hansgrohe (WT)</span>
+            <span class="fav">222</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">127</span>
+            <span class="name">VAN GESTEL Dries</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Soudal Quick-Step (WT)</span>
+            <span class="fav">813</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">223</span>
+            <span class="name">VAN HAUTEGEM Leander</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Team Flanders - Baloise (PRT)</span>
+            <span class="fav">1023</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">224</span>
+            <span class="name">VAN HEMELEN Vincent</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Team Flanders - Baloise (PRT)</span>
+            <span class="fav">466</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">195</span>
+            <span class="name">VAN MOER Brent</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Pinarello Q36.5 Pro Cycling Team (PRT)</span>
+            <span class="fav">562</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">225</span>
+            <span class="name">VANDENSTORME Dylan</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Team Flanders - Baloise (PRT)</span>
+            <span class="fav">1411</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">226</span>
+            <span class="name">VANHOOF Ward</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Team Flanders - Baloise (PRT)</span>
+            <span class="fav">753</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">227</span>
+            <span class="name">VERCOUILLIE Victor</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Team Flanders - Baloise (PRT)</span>
+            <span class="fav">1413</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">7</span>
+            <span class="name">VERMEERSCH Florian</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">UAE Team Emirates - XRG (WT)</span>
+            <span class="fav">76</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">111</span>
+            <span class="name">VERMEERSCH Gianni</span>
+            <span class="flag">🇧🇪</span>
+            <span class="team">Red Bull - BORA - hansgrohe (WT)</span>
+            <span class="fav">239</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">47</span>
+            <span class="name">WALKER Max</span>
+            <span class="flag">🇬🇧</span>
+            <span class="team">EF Education - EasyPost (WT)</span>
+            <span class="fav">909</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">66</span>
+            <span class="name">WATSON Samuel</span>
+            <span class="flag">🇬🇧</span>
+            <span class="team">INEOS Grenadiers (WT)</span>
+            <span class="fav">84</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">67</span>
+            <span class="name">WELSFORD Sam</span>
+            <span class="flag">🇦🇺</span>
+            <span class="team">INEOS Grenadiers (WT)</span>
+            <span class="fav">403</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">74</span>
+            <span class="name">WITHEN PHILIPSEN Albert</span>
+            <span class="flag">🇩🇰</span>
+            <span class="team">Lidl - Trek (WT)</span>
+            <span class="fav">174</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">196</span>
+            <span class="name">WRIGHT Fred</span>
+            <span class="flag">🇬🇧</span>
+            <span class="team">Pinarello Q36.5 Pro Cycling Team (PRT)</span>
+            <span class="fav">94</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">167</span>
+            <span class="name">WÆRENSKJOLD Søren</span>
+            <span class="flag">🇳🇴</span>
+            <span class="team">Uno-X Mobility (WT)</span>
+            <span class="fav">77</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">187</span>
+            <span class="name">ZAMPERINI Edoardo</span>
+            <span class="flag">🇮🇹</span>
+            <span class="team">Cofidis (PRT)</span>
+            <span class="fav">1423</span>
+        </div>
+        
+        <div class="row">
+            <span class="num">197</span>
+            <span class="name">ZUKOWSKY Nickolas</span>
+            <span class="flag">🇨🇦</span>
+            <span class="team">Pinarello Q36.5 Pro Cycling Team (PRT)</span>
+            <span class="fav">548</span>
+        </div>
+        
+        </div>
+    </body>
+    </html>
+    
