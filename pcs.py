@@ -1,4 +1,5 @@
 import pandas as pd
+import requests
 import re
 from bs4 import BeautifulSoup
 
@@ -8,9 +9,10 @@ import top_riders # Arrays of readable names for manual star assignment
 import how_won #
 
 # ---------------------------------------------------------
-# CONFIG — your local files
+# CONFIG — ingest etc
 # ---------------------------------------------------------
 
+STARTLIST_URL = "https://www.procyclingstats.com/race/ronde-van-vlaanderen/2026/startlist"
 STARTLIST_FILE = "pcs.html"
 TOPCOMP_FILE = "top.html"
 RACE_NAME = "Tour of Flanders 2026"
@@ -91,6 +93,27 @@ def load_html(path):
     with open(path, "r", encoding="utf-8") as f:
         return f.read()
 
+#----------------------------------------------------------
+# IMPORT FROM PCS
+# ---------------------------------------------------------
+HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/123.0.0.0 Safari/537.36"
+    ),
+    "Accept-Language": "en-US,en;q=0.9",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Referer": "https://www.google.com/",
+    "DNT": "1",
+}
+
+def fetch_html(url):
+    r = requests.get(url, headers=HEADERS)
+    r.raise_for_status()
+    return r.text
+startlist_html = fetch_html(STARTLIST_URL)
+
 # ---------------------------------------------------------
 # PARSE STARTLIST
 # ---------------------------------------------------------
@@ -115,25 +138,25 @@ def parse_startlist(html):
                 continue
 
             bib = bib_tag.get_text(strip=True) if bib_tag else ""
-
             raw_name = name_tag.get_text(strip=True)
+
+            # PCS → canonical lookup key
             lookup_key = make_lookup_from_pcs(raw_name)
             display_name = flip_name_from_pcs(raw_name)
 
+            # Flag ISO code
             iso = ""
-            flag = "—"
-
             if flag_tag:
-                for cls in flag_tag.get("class", []):
+                for cls in flag_tag.get("class") or []:
                     if cls != "flag":
                         iso = cls.lower()
 
-            if iso:
-                flag = iso_emoji.ISO_TO_EMOJI.get(iso, iso.upper())
+            flag = iso_emoji.ISO_TO_EMOJI.get(iso, iso.upper()) if iso else "—"
 
             rows.append([bib, display_name, flag, team_name, lookup_key])
 
     return pd.DataFrame(rows, columns=["Number", "Rider", "Flag", "Team", "Lookup"])
+
 
 # ---------------------------------------------------------
 # PARSE TOP COMPETITORS
@@ -324,7 +347,7 @@ def make_race_radio_html(df):
             rows.append(f"""
             <tr>
                 <td>{r['Number']}</td>
-                <td>{r['Rider']}{' — ' + scenario if scenario else ''}</td>
+                <td>{r['Rider']}<strong>{' — ' + scenario if scenario else ''}</strong></td>
                 <td>{r['Team']}</td>
                 <td>{r['Flag']}</td>
                 <td>{r['Stars']}</td>
