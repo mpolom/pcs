@@ -12,10 +12,10 @@ import how_won #
 # CONFIG — ingest etc
 # ---------------------------------------------------------
 
-STARTLIST_URL = "https://www.procyclingstats.com/race/ronde-van-vlaanderen/2026/startlist"
-STARTLIST_FILE = "pcs.html"
-TOPCOMP_FILE = "top.html"
-RACE_NAME = "Tour of Flanders 2026"
+STARTLIST_URL = "https://www.procyclingstats.com/race/paris-roubaix/2026/startlist"
+TOP_URL = f"{STARTLIST_URL}/top-competitors"
+DEBUT_URL = f"{STARTLIST_URL}/debutants"
+RACE_NAME = "Paris-Roubaix 2026"
 
 # ---------------------------------------------------------
 # Helpers
@@ -85,14 +85,6 @@ def manual_star_assign_lookup(lookup: str) -> str:
     if lookup in TIER_1: return "★☆☆☆☆"
     return DEFAULT_STARS
 
-# ---------------------------------------------------------
-# LOAD LOCAL HTML
-# ---------------------------------------------------------
-
-def load_html(path):
-    with open(path, "r", encoding="utf-8") as f:
-        return f.read()
-
 #----------------------------------------------------------
 # IMPORT FROM PCS
 # ---------------------------------------------------------
@@ -112,7 +104,9 @@ def fetch_html(url):
     r = requests.get(url, headers=HEADERS)
     r.raise_for_status()
     return r.text
+
 startlist_html = fetch_html(STARTLIST_URL)
+top_html = fetch_html(TOP_URL)
 
 # ---------------------------------------------------------
 # PARSE STARTLIST
@@ -379,9 +373,6 @@ def make_race_radio_html(df):
 # MAIN
 # ---------------------------------------------------------
 
-startlist_html = load_html(STARTLIST_FILE)
-top_html = load_html(TOPCOMP_FILE)
-
 df = parse_startlist(startlist_html)
 favs = parse_top_competitors(top_html)
 
@@ -392,8 +383,8 @@ two_col_html = make_two_column_html(df)
 race_radio_html = make_race_radio_html(df)
 team_grouped_html = make_team_grouped_html(df)
 
-with open(f"pages/{RACE_NAME}_startlist.html", "w", encoding="utf-8") as f:
-    f.write(startlist_html)
+#with open(f"pages/{RACE_NAME}_startlist.html", "w", encoding="utf-8") as f:
+#    f.write(startlist_html)
 with open(f"index.html", "w", encoding="utf-8") as f:
     f.write(race_radio_html)
 with open(f"pages/{RACE_NAME}_race_radio.html", "w", encoding="utf-8") as f:
