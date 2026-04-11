@@ -27,7 +27,7 @@ READABLE_TIER_2 = {
     "Biniam Girmay",
     "John Degenkolb",
     "Tim van Dijke",
-    "Josh Tarling", 
+    "Joshua Tarling", 
     "Gianni Vermeersch", 
     "Per Strand Hagenes",
     "Tibor Del Grosso",
