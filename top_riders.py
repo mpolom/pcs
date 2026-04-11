@@ -28,6 +28,7 @@ READABLE_TIER_2 = {
     "John Degenkolb",
     "Tim van Dijke",
     "Joshua Tarling", 
+    "Kasper Asgreen",
     "Gianni Vermeersch", 
     "Per Strand Hagenes",
     "Tibor Del Grosso",
@@ -41,6 +42,8 @@ READABLE_TIER_1 = {
     "Yves Lampaert",
     "Stefan Bissegger",
     "Matej Mohorič",
+    "Marco Haller",
     "Anthony Turgis",
+    "Iván García Cortina",
     "Søren Wærenskjold",
 }
