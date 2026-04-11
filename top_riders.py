@@ -9,19 +9,33 @@ READABLE_TIER_5 = {
 }
 
 READABLE_TIER_4 = {
-    "PHILIPSEN Jasper",
+    "Jasper Philipsen",
+    "Arnaud De Lie",
+    "Christophe Laporte",
+    "Filippo Ganna",
 }
 
 READABLE_TIER_3 = {
-"BRENNAN Matthew",
-"DE LIE Arnaud",
-"GIRMAY Biniam",
+    "Matthew Brennan",
+    "Biniam Girmay",
+    "Søren Wærenskjold",
+    "Jonas Abrahamsen",
+    "Florian Vermeersch",
+    "Dylan van Baarle",
 }
 
 READABLE_TIER_2 = {
-
+    "Jonathan Milan",
+    "Tim Merlier",
+    "Luca Mozzato",
+    "Nils Politt",
+    "Jasper Stuyven",
 }
 
 READABLE_TIER_1 = {
-
+    "Lukáš Kubiš",
+    "Fred Wright",
+    "Yves Lampaert",
+    "Stefan Bissegger",
+    "Matej Mohorič",
 }

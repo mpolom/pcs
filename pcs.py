@@ -15,6 +15,7 @@ import how_won #
 STARTLIST_URL = "https://www.procyclingstats.com/race/paris-roubaix/2026/startlist"
 TOP_URL = f"{STARTLIST_URL}/top-competitors"
 DEBUT_URL = f"{STARTLIST_URL}/debutants"
+PREVIOUS_URL = f"{STARTLIST_URL}/startlist/previous-performance"
 RACE_NAME = "Paris-Roubaix 2026"
 
 # ---------------------------------------------------------
@@ -107,6 +108,8 @@ def fetch_html(url):
 
 startlist_html = fetch_html(STARTLIST_URL)
 top_html = fetch_html(TOP_URL)
+debut_html = fetch_html(DEBUT_URL)
+previous_html = fetch_html(PREVIOUS_URL)
 
 # ---------------------------------------------------------
 # PARSE STARTLIST
@@ -184,7 +187,7 @@ def parse_top_competitors(html):
 # ---------------------------------------------------------
 
 def make_race_radio_html(df):
-    df = df.sort_values(["Fav"], ascending=[True])
+    df = df.sort_values(["Stars","Fav"], ascending=[True,True])
 
     rows = []
     for _, r in df.iterrows():
@@ -225,7 +228,7 @@ def make_race_radio_html(df):
     <body>
         <h2>Race Radio — {RACE_NAME}</h2>
         <table>
-            <tr><th>No.</th><th>Rider</th><th>Nat</th><th>Ranking</th></tr>
+            <tr><th>No.</th><th>Rider</th><th>Team</th><th>Nat</th><th>Stars</th><th>Ranking</th></tr>
             {''.join(rows)}
         </table>
     </body>
