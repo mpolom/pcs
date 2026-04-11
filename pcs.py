@@ -171,159 +171,20 @@ def parse_top_competitors(html):
 
         raw_name = name_tag.get_text(strip=True)
         key = make_lookup_from_pcs(raw_name)
-        score = cells[-1].get_text(strip=True)
+        raw = cells[0].get_text(strip=True)
+        match = re.search(r"\d+", raw)
+        score = int(match.group()) if match else 0
 
         favs[key] = score
 
     return favs
 
 # ---------------------------------------------------------
-# TWO-COLUMN PDF-READY HTML
-# ---------------------------------------------------------
-
-def make_two_column_html(df):
-    df = df.sort_values("Rider")
-
-    rows = []
-    for _, r in df.iterrows():
-        rows.append(f"""
-        <div class="row">
-            <span class="num">{r['Number']}</span>
-            <span class="name">{r['Rider']}</span>
-            <span class="flag">{r['Flag']}</span>
-            <span class="team">{r['Team']}</span>
-            <span class="fav">{r['Fav']}</span>
-        </div>
-        """)
-
-    return f"""
-    <html>
-    <head>
-        <meta charset="utf-8">
-        <style>
-            body {{
-                font-family: 'Courier New', monospace;
-                margin: 15mm;
-            }}
-            h2 {{
-                text-align: center;
-                margin-bottom: 10mm;
-            }}
-            .columns {{
-                column-count: 2;
-                column-gap: 20mm;
-            }}
-            .row {{
-                break-inside: avoid;
-                padding: 3px 0;
-                display: block;
-                width: 100%;
-            }}
-            .num {{ display: inline-block; width: 35px; }}
-            .name {{ display: inline-block; width: 180px; }}
-            .flag {{ display: inline-block; width: 30px; }}
-            .team {{ display: inline-block; width: 180px; }}
-            .fav {{ display: inline-block; width: 40px; text-align: right; }}
-
-            @media print {{
-                body {{ margin: 10mm; }}
-                .columns {{ column-count: 2; column-gap: 15mm; }}
-                .row {{ padding: 2px 0; font-size: 12px; }}
-                h2 {{ margin-bottom: 5mm; }}
-            }}
-        </style>
-    </head>
-    <body>
-        <h2>{RACE_NAME} — Startlist + PCS Favourites</h2>
-        <div class="columns">
-            {''.join(rows)}
-        </div>
-    </body>
-    </html>
-    """
-
-def make_team_grouped_html(df):
-    df = df.sort_values(["Team", "Number"])
-
-    html_blocks = []
-
-    for team, group in df.groupby("Team"):
-        rows = []
-        for _, r in group.iterrows():
-            rows.append(f"""
-            <div class="row">
-                <span class="num">{r['Number']}</span>
-                <span class="name">{r['Rider']}</span>
-                <span class="flag">{r['Flag']}</span>
-                <span class="stars">{r['Stars']}</span>
-            </div>
-            """)
-
-        block = f"""
-        <div class="team-block">
-            <h3>{team}</h3>
-            {''.join(rows)}
-        </div>
-        """
-        html_blocks.append(block)
-
-    return f"""
-    <html>
-    <head>
-        <meta charset="utf-8">
-        <style>
-            body {{
-                font-family: 'Courier New', monospace;
-                margin: 15mm;
-            }}
-            h2 {{
-                text-align: center;
-                margin-bottom: 10mm;
-            }}
-            h3 {{
-                margin-top: 8mm;
-                margin-bottom: 3mm;
-                border-bottom: 1px solid #ccc;
-                padding-bottom: 2px;
-            }}
-            .columns {{
-                column-count: 2;
-                column-gap: 20mm;
-            }}
-            .row {{
-                break-inside: avoid;
-                padding: 2px 0;
-                display: block;
-                width: 100%;
-            }}
-            .num {{ display: inline-block; width: 35px; }}
-            .name {{ display: inline-block; width: 160px; }}
-            .flag {{ display: inline-block; width: 30px; }}
-            .fav {{ display: inline-block; width: 30px; text-align: right; }}
-            .stars {{ display: inline-block; width: 70px; }}
-
-            @media print {{
-                body {{ margin: 10mm; }}
-                .columns {{ column-count: 2; column-gap: 15mm; }}
-                .row {{ font-size: 12px; }}
-            }}
-        </style>
-    </head>
-    <body>
-        <h2>{RACE_NAME} — Team‑Grouped Startlist</h2>
-        <div class="columns">
-            {''.join(html_blocks)}
-        </div>
-    </body>
-    </html>
-    """
-
-# ---------------------------------------------------------
 # RACE RADIO HTML
 # ---------------------------------------------------------
 
 def make_race_radio_html(df):
-    df = df.sort_values("Number")
+    df = df.sort_values(["Fav"], ascending=[True])
 
     rows = []
     for _, r in df.iterrows():
@@ -338,14 +199,16 @@ def make_race_radio_html(df):
             scenario_list = how_won.WIN_SCENARIOS_5
 
         for scenario in scenario_list:
-            rows.append(f"""
-            <tr>
-                <td>{r['Number']}</td>
-                <td>{r['Rider']}<strong>{' — ' + scenario if scenario else ''}</strong></td>
-                <td>{r['Team']}</td>
-                <td>{r['Flag']}</td>
-                <td>{r['Stars']}</td>
-            </tr>
+            if r['Fav'] <= 50 and r['Fav'] > 0:
+                rows.append(f"""
+                <tr>
+                    <td>{r['Number']}</td>
+                    <td>{r['Rider']}<strong>{' — ' + scenario if scenario else ''}</strong></td>
+                    <td>{r['Team']}</td>
+                    <td>{r['Flag']}</td>
+                    <td>{r['Stars']}</td>
+                    <td>{r['Fav']}</td>
+                </tr>
             """)
 
     return f"""
@@ -376,24 +239,21 @@ def make_race_radio_html(df):
 df = parse_startlist(startlist_html)
 favs = parse_top_competitors(top_html)
 
-df["Fav"] = df["Lookup"].map(lambda x: favs.get(x, "—"))
+# Convert favs dict → DataFrame
+favs_df = pd.DataFrame(
+    [{"Lookup": k, "Fav": v} for k, v in favs.items()]
+)
+# Merge
+df = df.merge(favs_df, on="Lookup", how="left")
+df["Fav"] = df["Fav"].fillna(0).astype(int)
 df["Stars"] = df["Lookup"].map(manual_star_assign_lookup)
 
-two_col_html = make_two_column_html(df)
 race_radio_html = make_race_radio_html(df)
-team_grouped_html = make_team_grouped_html(df)
 
-#with open(f"pages/{RACE_NAME}_startlist.html", "w", encoding="utf-8") as f:
-#    f.write(startlist_html)
 with open(f"index.html", "w", encoding="utf-8") as f:
     f.write(race_radio_html)
-with open(f"pages/{RACE_NAME}_race_radio.html", "w", encoding="utf-8") as f:
-    f.write(race_radio_html)
-with open(f"pages/{RACE_NAME}_teams.html", "w", encoding="utf-8") as f:
-    f.write(team_grouped_html)
 
 print("Generated:")
-print(f" - {RACE_NAME}_two_column.html")
 print(f" - {RACE_NAME}_race_radio.html")
-print(f" - {RACE_NAME}_teams.html")
+print(f" - index.html")
 print(f"Total riders: {len(df)}")
