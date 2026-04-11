@@ -108,8 +108,6 @@ def fetch_html(url):
 
 startlist_html = fetch_html(STARTLIST_URL)
 top_html = fetch_html(TOP_URL)
-debut_html = fetch_html(DEBUT_URL)
-previous_html = fetch_html(PREVIOUS_URL)
 
 # ---------------------------------------------------------
 # PARSE STARTLIST
@@ -202,7 +200,7 @@ def make_race_radio_html(df):
             scenario_list = how_won.WIN_SCENARIOS_5
 
         for scenario in scenario_list:
-            if r['Fav'] <= 50 and r['Fav'] > 0:
+            if r['Stars'] != "☆☆☆☆☆":
                 rows.append(f"""
                 <tr>
                     <td>{r['Number']}</td>
@@ -210,7 +208,6 @@ def make_race_radio_html(df):
                     <td>{r['Team']}</td>
                     <td>{r['Flag']}</td>
                     <td>{r['Stars']}</td>
-                    <td>{r['Fav']}</td>
                 </tr>
             """)
 
@@ -228,7 +225,7 @@ def make_race_radio_html(df):
     <body>
         <h2>Race Radio — {RACE_NAME}</h2>
         <table>
-            <tr><th>No.</th><th>Rider</th><th>Team</th><th>Nat</th><th>Stars</th><th>Ranking</th></tr>
+            <tr><th>No.</th><th>Rider</th><th>Team</th><th>Nat</th><th>Stars</th></tr>
             {''.join(rows)}
         </table>
     </body>
