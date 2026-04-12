@@ -11,16 +11,17 @@ READABLE_TIER_4 = {
     "Wout Van Aert",
     "Mads Pedersen",
     "Filippo Ganna",
+    "Jasper Philipsen",
 }
 
 READABLE_TIER_3 = {
-    "Jasper Philipsen",
     "Arnaud De Lie",
     "Christophe Laporte",
     "Matthew Brennan",
     "Jonas Abrahamsen",
     "Florian Vermeersch",
     "Dylan van Baarle",
+    "Gianni Vermeersch", 
 }
 
 READABLE_TIER_2 = {
@@ -29,7 +30,6 @@ READABLE_TIER_2 = {
     "Tim van Dijke",
     "Joshua Tarling", 
     "Kasper Asgreen",
-    "Gianni Vermeersch", 
     "Per Strand Hagenes",
     "Tibor Del Grosso",
     "Jordi Meeus",
@@ -46,4 +46,10 @@ READABLE_TIER_1 = {
     "Anthony Turgis",
     "Iván García Cortina",
     "Søren Wærenskjold",
+    "Jonathan Milan",
+    "Jakob Söderqvist",
+    "Alec Segaert",
+    "Oliver Naesen",
+    "Davide Ballerini",
+    "Michael Valgren",
 }
